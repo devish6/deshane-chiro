@@ -128,12 +128,13 @@
   @media(max-width:860px){.about-grid{grid-template-columns:1fr;gap:32px}.about-photo{max-width:340px;margin:0 auto}}
 
   /* ---------- REVIEWS ---------- */
-  .reviews{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
-  .review{background:#fff;border:1px solid var(--line);border-radius:18px;padding:26px}
+  .reviews{display:flex;flex-wrap:wrap;gap:22px;justify-content:center}
+  .review{background:#fff;border:1px solid var(--line);border-radius:18px;padding:26px;
+    flex:0 1 332px;display:flex;flex-direction:column}
   .review .qs{color:#f5a623;letter-spacing:2px;margin-bottom:12px}
-  .review p{color:var(--ink);font-size:.98rem;margin-bottom:16px}
+  .review p{color:var(--ink);font-size:.98rem;margin-bottom:16px;flex:1}
   .review .who{color:var(--muted);font-size:.9rem;font-weight:600}
-  @media(max-width:860px){.reviews{grid-template-columns:1fr}}
+  @media(max-width:860px){.review{flex:1 1 100%}}
   .reviews-cta{text-align:center;margin-top:34px}
 
   /* ---------- LOCATION ---------- */
@@ -294,20 +295,30 @@
       <h2>Sarnia patients love their results</h2>
       <p>Don't just take our word for it — here's what the community has to say.</p>
     </div>
-    <!-- Replace the quotes below with real Google reviews when ready -->
+    <!-- Real patient reviews from Google / RateMDs (reviewers anonymous on source). -->
     <div class="reviews">
       <div class="review"><div class="qs">★★★★★</div>
-        <p>“I came in barely able to turn my neck and left feeling like a new person. Dr. de Shane
-          actually takes the time to explain everything.”</p>
-        <div class="who">— Verified patient, Sarnia</div></div>
+        <p>“I walked in thinking I had a back problem, only to find out it was a hip problem that
+          Dr. De Shane corrected in the first visit. I walked out feeling no pain at all.”</p>
+        <div class="who">— Verified patient · Google</div></div>
       <div class="review"><div class="qs">★★★★★</div>
-        <p>“Years of lower back pain and this is the first place that gave me real, lasting relief.
-          Friendly, professional and never rushed.”</p>
-        <div class="who">— Verified patient, Sarnia</div></div>
+        <p>“Very knowledgeable. He'll fix your issue quickly and diagnose it correctly. He's not
+          in it to milk your insurance or have you pay for indefinite treatment — he helps people.
+          Totally recommend Dr. De Shane.”</p>
+        <div class="who">— Verified patient · RateMDs</div></div>
       <div class="review"><div class="qs">★★★★★</div>
-        <p>“The whole family goes here now. Gentle with the kids and great with my migraines.
-          Highly recommend to anyone in Lambton County.”</p>
-        <div class="who">— Verified patient, Sarnia</div></div>
+        <p>“He's excellent at explaining exactly what's going on and why there's an issue. You never
+          feel rushed — he's more than willing to answer every question in a way anyone can
+          understand.”</p>
+        <div class="who">— Verified patient · Google</div></div>
+      <div class="review"><div class="qs">★★★★★</div>
+        <p>“I'm 56 and feel better than ever. I had bad headaches from high school on, but since
+          seeing Dave I might get one once a year.”</p>
+        <div class="who">— Verified patient · Google</div></div>
+      <div class="review"><div class="qs">★★★★★</div>
+        <p>“Very knowledgeable and always able to provide fast relief for me and my family.
+          Wouldn't go anywhere else in Sarnia.”</p>
+        <div class="who">— Verified patient · Google</div></div>
     </div>
     <div class="reviews-cta">
       <a class="btn btn-ghost" href="https://www.google.com/search?q=De+Shane+Chiropractic+and+Health+Institute+Sarnia+reviews" target="_blank" rel="noopener">Read more reviews on Google →</a>
