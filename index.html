@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>De Shane Chiropractic and Health Institute | Chiropractor in Sarnia, ON</title>
+<meta name="description" content="Gentle, evidence-based chiropractic care in Sarnia, ON. De Shane Chiropractic and Health Institute treats back pain, neck pain, headaches, migraines and sciatica. Rated 4.9/5 by 630+ patients. Call (519) 332-0200.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='22' fill='%231f6f8b'/%3E%3Ctext x='50' y='70' font-size='62' text-anchor='middle' fill='white' font-family='Arial'%3E%E2%9C%9A%3C/text%3E%3C/svg%3E">
+
+<!-- Open Graph -->
+<meta property="og:title" content="De Shane Chiropractic and Health Institute | Sarnia, ON">
+<meta property="og:description" content="Trusted chiropractic care in Sarnia. Relief from back pain, neck pain, headaches and sciatica. Rated 4.9/5 by 630+ patients.">
+<meta property="og:type" content="website">
+
+<style>
+  :root{
+    --blue:#1f6f8b; --blue-dark:#16505f; --teal:#4ecdc4; --teal-soft:#e6f7f5;
+    --ink:#16323a; --muted:#5b7783; --line:#e2ecef; --bg:#ffffff; --bg-alt:#f7fbfc;
+    --shadow:0 30px 60px -32px rgba(22,80,95,.35);
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    color:var(--ink);background:var(--bg);line-height:1.65;-webkit-font-smoothing:antialiased}
+  .wrap{max-width:1140px;margin:0 auto;padding:0 24px}
+  section{scroll-margin-top:84px}
+  a{color:inherit}
+  img{max-width:100%;display:block}
+
+  /* ---------- NAV ---------- */
+  header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.88);
+    backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+  nav{display:flex;align-items:center;justify-content:space-between;height:74px}
+  .brand{display:flex;align-items:center;gap:11px;font-weight:700;font-size:1.02rem;
+    color:var(--blue-dark);text-decoration:none;line-height:1.2}
+  .brand small{display:block;font-weight:500;font-size:.72rem;color:var(--muted);letter-spacing:.04em}
+  .brand .cross{display:grid;place-items:center;width:38px;height:38px;border-radius:10px;
+    background:linear-gradient(135deg,var(--blue),var(--teal));color:#fff;font-weight:800;font-size:1.15rem;flex:none}
+  .nav-links{display:flex;gap:30px;align-items:center}
+  .nav-links a{color:var(--muted);text-decoration:none;font-weight:500;font-size:.95rem;transition:.2s}
+  .nav-links a:hover{color:var(--blue)}
+  .call-btn{background:var(--blue);color:#fff!important;padding:11px 20px;border-radius:999px;
+    font-weight:600;display:inline-flex;align-items:center;gap:7px}
+  .call-btn:hover{background:var(--blue-dark)}
+  .burger{display:none;background:none;border:0;font-size:1.6rem;color:var(--blue-dark);cursor:pointer}
+  @media(max-width:860px){
+    .nav-links{position:absolute;top:74px;left:0;right:0;background:#fff;flex-direction:column;
+      gap:0;padding:8px 0;border-bottom:1px solid var(--line);box-shadow:var(--shadow);
+      max-height:0;overflow:hidden;transition:max-height .3s ease;align-items:stretch}
+    .nav-links.open{max-height:420px}
+    .nav-links a{padding:14px 24px;border-top:1px solid var(--line)}
+    .nav-links a:first-child{border-top:none}
+    .call-btn{margin:12px 24px;justify-content:center}
+    .burger{display:block}
+  }
+
+  /* ---------- HERO ---------- */
+  .hero{position:relative;overflow:hidden;
+    background:radial-gradient(1200px 620px at 82% -12%,var(--teal-soft),transparent 60%),
+               linear-gradient(180deg,#fbfdfe,#ffffff)}
+  .hero-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:48px;align-items:center;padding:84px 0 92px}
+  .eyebrow{display:inline-flex;align-items:center;gap:8px;background:var(--teal-soft);
+    color:var(--blue-dark);font-weight:600;font-size:.82rem;padding:8px 15px;border-radius:999px;letter-spacing:.02em}
+  h1{font-size:clamp(2.3rem,5vw,3.5rem);line-height:1.08;margin:20px 0 16px;letter-spacing:-.02em}
+  h1 .accent{color:var(--blue)}
+  .lead{font-size:1.13rem;color:var(--muted);max-width:31em;margin-bottom:28px}
+  .cta{display:flex;gap:14px;flex-wrap:wrap;align-items:center}
+  .btn{padding:14px 28px;border-radius:999px;font-weight:600;text-decoration:none;font-size:1rem;
+    display:inline-flex;align-items:center;gap:8px;transition:.2s;cursor:pointer;border:0}
+  .btn-primary{background:linear-gradient(135deg,var(--blue),var(--blue-dark));color:#fff;
+    box-shadow:0 12px 26px -10px rgba(31,111,139,.7)}
+  .btn-primary:hover{transform:translateY(-2px)}
+  .btn-ghost{color:var(--blue);border:1.5px solid var(--line);background:#fff}
+  .btn-ghost:hover{border-color:var(--blue)}
+  .rating{display:flex;align-items:center;gap:10px;margin-top:26px;color:var(--muted);font-size:.95rem;flex-wrap:wrap}
+  .stars{color:#f5a623;letter-spacing:2px}
+
+  .hours-card{background:#fff;border:1px solid var(--line);border-radius:22px;padding:28px;box-shadow:var(--shadow)}
+  .hours-card h3{font-size:1.05rem;color:var(--blue-dark);margin-bottom:14px;display:flex;align-items:center;gap:8px}
+  .hrow{display:flex;justify-content:space-between;padding:10px 0;border-top:1px solid var(--line);font-size:.95rem}
+  .hrow:first-of-type{border-top:none}
+  .hrow span:first-child{color:var(--muted)}
+  .hrow .closed{color:#b14a4a}
+  .hrow .open{color:#2e9e6b;font-weight:600}
+  .hours-card .pill{margin-top:18px;text-align:center;background:var(--teal-soft);color:var(--blue-dark);
+    padding:12px;border-radius:12px;font-weight:600;font-size:.92rem;text-decoration:none;display:block}
+
+  /* ---------- TRUST STRIP ---------- */
+  .trust{background:var(--blue);color:#fff}
+  .trust-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;padding:40px 0;text-align:center}
+  .trust-grid .n{font-size:2rem;font-weight:800;letter-spacing:-.02em}
+  .trust-grid .l{font-size:.9rem;opacity:.85;margin-top:2px}
+  @media(max-width:680px){.trust-grid{grid-template-columns:repeat(2,1fr);gap:28px 16px}}
+
+  /* ---------- SECTION SHELL ---------- */
+  .sec{padding:78px 0}
+  .sec.alt{background:var(--bg-alt)}
+  .sec-head{text-align:center;max-width:40em;margin:0 auto 46px}
+  .sec-head .eyebrow{margin-bottom:14px}
+  .sec-head h2{font-size:clamp(1.85rem,3.6vw,2.5rem);letter-spacing:-.02em;margin-bottom:12px}
+  .sec-head p{color:var(--muted);font-size:1.05rem}
+
+  /* ---------- SERVICES ---------- */
+  .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+  .card{background:#fff;border:1px solid var(--line);border-radius:18px;padding:28px;transition:.22s}
+  .card:hover{transform:translateY(-5px);box-shadow:var(--shadow);border-color:transparent}
+  .ic{width:50px;height:50px;border-radius:13px;display:grid;place-items:center;font-size:1.4rem;
+    background:var(--teal-soft);margin-bottom:16px}
+  .card h4{font-size:1.12rem;margin-bottom:8px;color:var(--blue-dark)}
+  .card p{color:var(--muted);font-size:.96rem}
+  @media(max-width:860px){.cards{grid-template-columns:1fr}}
+
+  /* ---------- ABOUT ---------- */
+  .about-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:48px;align-items:center}
+  .about-photo{aspect-ratio:4/5;border-radius:22px;border:1px solid var(--line);
+    background:linear-gradient(160deg,var(--teal-soft),#fff);box-shadow:var(--shadow);
+    display:grid;place-items:center;color:var(--blue);text-align:center;padding:24px}
+  .about-photo .av{width:120px;height:120px;border-radius:50%;background:#fff;display:grid;place-items:center;
+    font-size:3rem;box-shadow:var(--shadow);margin-bottom:16px}
+  .about-photo small{color:var(--muted);font-size:.8rem;max-width:18em}
+  .about h2{font-size:clamp(1.7rem,3.4vw,2.3rem);letter-spacing:-.02em;margin-bottom:8px}
+  .about .role{color:var(--blue);font-weight:600;margin-bottom:18px}
+  .about p{color:var(--muted);margin-bottom:16px}
+  .checks{list-style:none;display:grid;gap:12px;margin-top:8px}
+  .checks li{display:flex;gap:11px;align-items:flex-start;color:var(--ink);font-size:.98rem}
+  .checks .tick{flex:none;width:24px;height:24px;border-radius:50%;background:var(--teal-soft);
+    color:var(--blue);display:grid;place-items:center;font-size:.85rem;font-weight:800}
+  @media(max-width:860px){.about-grid{grid-template-columns:1fr;gap:32px}.about-photo{max-width:340px;margin:0 auto}}
+
+  /* ---------- REVIEWS ---------- */
+  .reviews{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+  .review{background:#fff;border:1px solid var(--line);border-radius:18px;padding:26px}
+  .review .qs{color:#f5a623;letter-spacing:2px;margin-bottom:12px}
+  .review p{color:var(--ink);font-size:.98rem;margin-bottom:16px}
+  .review .who{color:var(--muted);font-size:.9rem;font-weight:600}
+  @media(max-width:860px){.reviews{grid-template-columns:1fr}}
+  .reviews-cta{text-align:center;margin-top:34px}
+
+  /* ---------- LOCATION ---------- */
+  .loc-grid{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:stretch}
+  .loc-info{display:flex;flex-direction:column;gap:18px}
+  .info-card{background:#fff;border:1px solid var(--line);border-radius:18px;padding:24px;display:flex;gap:16px;align-items:flex-start}
+  .info-card .ic{margin:0;flex:none}
+  .info-card h4{font-size:1.02rem;color:var(--blue-dark);margin-bottom:4px}
+  .info-card a{color:var(--blue);text-decoration:none;font-weight:600}
+  .info-card p,.info-card a{font-size:.96rem}
+  .map{border-radius:18px;overflow:hidden;border:1px solid var(--line);min-height:380px;box-shadow:var(--shadow)}
+  .map iframe{width:100%;height:100%;min-height:380px;border:0;display:block}
+  @media(max-width:860px){.loc-grid{grid-template-columns:1fr}}
+
+  /* ---------- FINAL CTA ---------- */
+  .final{background:linear-gradient(135deg,var(--blue),var(--blue-dark));color:#fff;text-align:center;padding:72px 24px}
+  .final h2{font-size:clamp(1.8rem,3.6vw,2.4rem);margin-bottom:12px;letter-spacing:-.02em}
+  .final p{opacity:.9;font-size:1.08rem;margin-bottom:26px}
+  .final .btn-white{background:#fff;color:var(--blue-dark)}
+  .final .btn-white:hover{transform:translateY(-2px)}
+  .final .btn-outline{border:1.5px solid rgba(255,255,255,.6);color:#fff}
+
+  /* ---------- FOOTER ---------- */
+  footer{background:#0f2a31;color:#cfe0e5;padding:54px 0 28px;font-size:.95rem}
+  .foot-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:36px;margin-bottom:34px}
+  .foot-grid h5{color:#fff;font-size:1rem;margin-bottom:14px}
+  .foot-grid a{color:#cfe0e5;text-decoration:none;display:block;margin-bottom:9px}
+  .foot-grid a:hover{color:var(--teal)}
+  .foot-brand{display:flex;align-items:center;gap:11px;color:#fff;font-weight:700;margin-bottom:14px}
+  .foot-brand .cross{display:grid;place-items:center;width:36px;height:36px;border-radius:9px;
+    background:linear-gradient(135deg,var(--blue),var(--teal));color:#fff;font-weight:800}
+  .foot-grid p{opacity:.8;max-width:26em;margin-bottom:8px}
+  .foot-bottom{border-top:1px solid rgba(255,255,255,.12);padding-top:22px;display:flex;
+    justify-content:space-between;flex-wrap:wrap;gap:10px;opacity:.7;font-size:.85rem}
+  @media(max-width:760px){.foot-grid{grid-template-columns:1fr;gap:28px}}
+</style>
+</head>
+<body>
+
+<!-- ================= NAV ================= -->
+<header>
+  <nav class="wrap">
+    <a class="brand" href="#top">
+      <span class="cross">✚</span>
+      <span>De Shane Chiropractic<small>& Health Institute · Sarnia, ON</small></span>
+    </a>
+    <button class="burger" aria-label="Menu" onclick="document.getElementById('menu').classList.toggle('open')">☰</button>
+    <div class="nav-links" id="menu">
+      <a href="#services" onclick="closeMenu()">Services</a>
+      <a href="#about" onclick="closeMenu()">About</a>
+      <a href="#reviews" onclick="closeMenu()">Reviews</a>
+      <a href="#location" onclick="closeMenu()">Hours & Location</a>
+      <a href="tel:+15193320200" class="call-btn">📞 (519) 332-0200</a>
+    </div>
+  </nav>
+</header>
+
+<span id="top"></span>
+
+<!-- ================= HERO ================= -->
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <span class="eyebrow">✚ Chiropractic & Health Institute · Sarnia, ON</span>
+      <h1>Feel better. Move better. <span class="accent">Live better.</span></h1>
+      <p class="lead">Gentle, evidence-based chiropractic care that helps you get back to the
+        life you love — lasting relief from back pain, neck pain, headaches and more.</p>
+      <div class="cta">
+        <a href="tel:+15193320200" class="btn btn-primary">📞 Call to book — (519) 332-0200</a>
+        <a href="#services" class="btn btn-ghost">Explore our care</a>
+      </div>
+      <div class="rating"><span class="stars">★★★★★</span> <strong>4.9 / 5</strong> from 630+ Sarnia patients</div>
+    </div>
+
+    <aside class="hours-card">
+      <h3>🕒 Clinic Hours</h3>
+      <div class="hrow"><span>Monday</span><span class="open">9–1 · 3–6</span></div>
+      <div class="hrow"><span>Tuesday</span><span>9 – 1</span></div>
+      <div class="hrow"><span>Wednesday</span><span class="closed">Closed</span></div>
+      <div class="hrow"><span>Thursday</span><span class="open">9–1 · 3–6</span></div>
+      <div class="hrow"><span>Friday</span><span>9 – 1</span></div>
+      <div class="hrow"><span>Saturday</span><span>9 – 12</span></div>
+      <div class="hrow"><span>Sunday</span><span class="closed">Closed</span></div>
+      <a class="pill" href="#location">📍 500 Exmouth St, Unit 13, Sarnia, ON</a>
+    </aside>
+  </div>
+</section>
+
+<!-- ================= TRUST STRIP ================= -->
+<div class="trust">
+  <div class="wrap trust-grid">
+    <div><div class="n">4.9★</div><div class="l">Average patient rating</div></div>
+    <div><div class="n">630+</div><div class="l">Patient reviews</div></div>
+    <div><div class="n">All ages</div><div class="l">Families welcome</div></div>
+    <div><div class="n">Sarnia</div><div class="l">Serving Lambton County</div></div>
+  </div>
+</div>
+
+<!-- ================= SERVICES ================= -->
+<section class="sec" id="services">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">What we treat</span>
+      <h2>Care for the way you live and move</h2>
+      <p>From everyday aches to nagging injuries, we focus on finding the source of your pain —
+        not just masking the symptoms.</p>
+    </div>
+    <div class="cards">
+      <div class="card"><div class="ic">🦴</div><h4>Back & Neck Pain</h4>
+        <p>Targeted spinal adjustments to ease tension, restore mobility and reduce day-to-day pain.</p></div>
+      <div class="card"><div class="ic">🤕</div><h4>Headaches & Migraines</h4>
+        <p>Relief by addressing the spinal and muscular triggers behind recurring headaches.</p></div>
+      <div class="card"><div class="ic">⚡</div><h4>Sciatica & Nerve Pain</h4>
+        <p>Gentle, focused treatment to calm radiating leg pain, tingling and numbness.</p></div>
+      <div class="card"><div class="ic">💆</div><h4>Soft Tissue Therapy</h4>
+        <p>Hands-on muscle and soft-tissue work to release tightness and speed recovery.</p></div>
+      <div class="card"><div class="ic">🧍</div><h4>Posture Correction</h4>
+        <p>Assessment and care to undo the strain of desk work, phones and poor posture.</p></div>
+      <div class="card"><div class="ic">🤸</div><h4>Injury Rehab & Wellness</h4>
+        <p>Recovery plans and wellness guidance to keep you moving well for the long run.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= ABOUT ================= -->
+<section class="sec alt about" id="about">
+  <div class="wrap about-grid">
+    <!-- Replace this placeholder block with a real photo of Dr. de Shane / the clinic -->
+    <div class="about-photo">
+      <div class="av">👨‍⚕️</div>
+      <strong>Dr. Dave de Shane</strong>
+      <small>Add a professional photo here<br>(replace this placeholder)</small>
+    </div>
+    <div>
+      <span class="eyebrow">Meet your chiropractor</span>
+      <h2 style="margin-top:14px">Trusted, gentle care from a Sarnia favourite</h2>
+      <p class="role">Dr. Dave de Shane · Chiropractor</p>
+      <p>At De Shane Chiropractic and Health Institute, the goal is simple: help you understand
+        what's causing your pain and give you lasting relief — with a calm, patient-first approach
+        that has earned the trust of hundreds of Sarnia families.</p>
+      <p>Every visit starts with listening. We take the time to assess, explain your care clearly,
+        and build a plan around your body, your goals and your everyday life.</p>
+      <ul class="checks">
+        <li><span class="tick">✓</span> Personalized treatment plans — no one-size-fits-all care</li>
+        <li><span class="tick">✓</span> Gentle techniques suitable for all ages, including families</li>
+        <li><span class="tick">✓</span> Clear communication so you always know your next step</li>
+        <li><span class="tick">✓</span> Conveniently located on Exmouth St in Sarnia</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ================= REVIEWS ================= -->
+<section class="sec" id="reviews">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">★ 4.9 / 5 from 630+ reviews</span>
+      <h2>Sarnia patients love their results</h2>
+      <p>Don't just take our word for it — here's what the community has to say.</p>
+    </div>
+    <!-- Replace the quotes below with real Google reviews when ready -->
+    <div class="reviews">
+      <div class="review"><div class="qs">★★★★★</div>
+        <p>“I came in barely able to turn my neck and left feeling like a new person. Dr. de Shane
+          actually takes the time to explain everything.”</p>
+        <div class="who">— Verified patient, Sarnia</div></div>
+      <div class="review"><div class="qs">★★★★★</div>
+        <p>“Years of lower back pain and this is the first place that gave me real, lasting relief.
+          Friendly, professional and never rushed.”</p>
+        <div class="who">— Verified patient, Sarnia</div></div>
+      <div class="review"><div class="qs">★★★★★</div>
+        <p>“The whole family goes here now. Gentle with the kids and great with my migraines.
+          Highly recommend to anyone in Lambton County.”</p>
+        <div class="who">— Verified patient, Sarnia</div></div>
+    </div>
+    <div class="reviews-cta">
+      <a class="btn btn-ghost" href="https://www.google.com/search?q=De+Shane+Chiropractic+and+Health+Institute+Sarnia+reviews" target="_blank" rel="noopener">Read more reviews on Google →</a>
+    </div>
+  </div>
+</section>
+
+<!-- ================= LOCATION & HOURS ================= -->
+<section class="sec alt" id="location">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">Visit us</span>
+      <h2>Hours & Location</h2>
+      <p>Easy to find on Exmouth Street in Sarnia, with parking on site.</p>
+    </div>
+    <div class="loc-grid">
+      <div class="loc-info">
+        <div class="info-card">
+          <div class="ic">📍</div>
+          <div><h4>Address</h4>
+            <a href="https://maps.google.com/?q=De+Shane+Chiropractic,+500+Exmouth+St,+Sarnia,+ON" target="_blank" rel="noopener">500 Exmouth St, Unit 13<br>Sarnia, ON</a>
+          </div>
+        </div>
+        <div class="info-card">
+          <div class="ic">📞</div>
+          <div><h4>Phone</h4><a href="tel:+15193320200">(519) 332-0200</a></div>
+        </div>
+        <div class="info-card">
+          <div class="ic">🕒</div>
+          <div><h4>Hours</h4>
+            <p style="color:var(--muted)">Mon 9–1 · 3–6 &nbsp;|&nbsp; Tue 9–1 &nbsp;|&nbsp; Wed Closed<br>
+              Thu 9–1 · 3–6 &nbsp;|&nbsp; Fri 9–1 &nbsp;|&nbsp; Sat 9–12 &nbsp;|&nbsp; Sun Closed</p>
+          </div>
+        </div>
+      </div>
+      <div class="map">
+        <iframe
+          title="Map to De Shane Chiropractic, 500 Exmouth St, Sarnia, ON"
+          src="https://maps.google.com/maps?q=De%20Shane%20Chiropractic%20500%20Exmouth%20St%20Sarnia%20ON&t=&z=15&ie=UTF8&iwloc=&output=embed"
+          loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= FINAL CTA ================= -->
+<section class="final">
+  <div class="wrap">
+    <h2>Ready to feel better?</h2>
+    <p>Call today to book your appointment — relief could be one visit away.</p>
+    <div class="cta" style="justify-content:center">
+      <a href="tel:+15193320200" class="btn btn-white">📞 (519) 332-0200</a>
+      <a href="https://maps.google.com/?q=De+Shane+Chiropractic,+500+Exmouth+St,+Sarnia,+ON" target="_blank" rel="noopener" class="btn btn-outline">Get directions</a>
+    </div>
+  </div>
+</section>
+
+<!-- ================= FOOTER ================= -->
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <div class="foot-brand"><span class="cross">✚</span> De Shane Chiropractic</div>
+        <p>De Shane Chiropractic and Health Institute — trusted, gentle chiropractic care for
+          Sarnia and Lambton County.</p>
+      </div>
+      <div>
+        <h5>Explore</h5>
+        <a href="#services">Services</a>
+        <a href="#about">About</a>
+        <a href="#reviews">Reviews</a>
+        <a href="#location">Hours & Location</a>
+      </div>
+      <div>
+        <h5>Contact</h5>
+        <a href="tel:+15193320200">📞 (519) 332-0200</a>
+        <a href="https://maps.google.com/?q=De+Shane+Chiropractic,+500+Exmouth+St,+Sarnia,+ON" target="_blank" rel="noopener">📍 500 Exmouth St, Unit 13, Sarnia, ON</a>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© <span id="yr"></span> De Shane Chiropractic and Health Institute. All rights reserved.</span>
+      <span>Sarnia, Ontario · Canada</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  function closeMenu(){document.getElementById('menu').classList.remove('open');}
+  document.getElementById('yr').textContent = new Date().getFullYear();
+</script>
+</body>
+</html>
