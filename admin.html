@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>Admin · De Shane Chiropractic</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='22' fill='%231f6f8b'/%3E%3Ctext x='50' y='70' font-size='62' text-anchor='middle' fill='white' font-family='Arial'%3E%E2%9C%9A%3C/text%3E%3C/svg%3E">
+<style>
+  :root{--blue:#1f6f8b;--blue-dark:#16505f;--teal:#4ecdc4;--teal-soft:#e6f7f5;
+    --ink:#16323a;--muted:#5b7783;--line:#e2ecef;--bg:#f3f8fa;--red:#c0392b;--green:#2e9e6b}
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    color:var(--ink);background:var(--bg);line-height:1.6;-webkit-font-smoothing:antialiased;
+    min-height:100vh;padding:32px 16px}
+  .card{background:#fff;border:1px solid var(--line);border-radius:20px;
+    box-shadow:0 30px 60px -34px rgba(22,80,95,.4)}
+  .brand{display:flex;align-items:center;gap:11px;font-weight:700;color:var(--blue-dark);
+    justify-content:center;margin-bottom:20px}
+  .brand .cross{display:grid;place-items:center;width:40px;height:40px;border-radius:11px;
+    background:linear-gradient(135deg,var(--blue),var(--teal));color:#fff;font-weight:800;font-size:1.2rem}
+
+  /* LOGIN */
+  .login{max-width:400px;margin:6vh auto 0;padding:34px}
+  .login h1{font-size:1.4rem;text-align:center;margin-bottom:6px}
+  .login p{color:var(--muted);text-align:center;font-size:.92rem;margin-bottom:22px}
+
+  label{display:block;font-weight:600;font-size:.88rem;margin:0 0 7px;color:var(--blue-dark)}
+  input[type=text],input[type=password],textarea{width:100%;padding:12px 14px;border:1.5px solid var(--line);
+    border-radius:11px;font:inherit;color:var(--ink);background:#fff;transition:.15s}
+  input:focus,textarea:focus{outline:none;border-color:var(--blue);box-shadow:0 0 0 3px var(--teal-soft)}
+  textarea{resize:vertical;min-height:80px}
+  .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;width:100%;padding:13px 20px;
+    border:0;border-radius:999px;font:inherit;font-weight:600;cursor:pointer;transition:.18s;font-size:1rem}
+  .btn-primary{background:linear-gradient(135deg,var(--blue),var(--blue-dark));color:#fff}
+  .btn-primary:hover{transform:translateY(-1px)}
+  .btn-primary:disabled{opacity:.6;cursor:not-allowed;transform:none}
+  .msg{font-size:.9rem;margin-top:14px;padding:11px 14px;border-radius:11px;display:none}
+  .msg.err{display:block;background:#fdeceb;color:var(--red)}
+  .msg.ok{display:block;background:#e7f7ef;color:var(--green)}
+  .msg.info{display:block;background:var(--teal-soft);color:var(--blue-dark)}
+
+  /* PANEL */
+  .panel{max-width:760px;margin:0 auto;padding:30px 32px 34px;display:none}
+  .panel.show{display:block}
+  .topbar{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:8px}
+  .topbar h1{font-size:1.3rem}
+  .topbar .links{display:flex;gap:8px}
+  .mini{background:none;border:1.5px solid var(--line);color:var(--muted);padding:8px 14px;border-radius:999px;
+    font:inherit;font-size:.85rem;font-weight:600;cursor:pointer;text-decoration:none}
+  .mini:hover{border-color:var(--blue);color:var(--blue)}
+  .sub{color:var(--muted);font-size:.92rem;margin-bottom:22px}
+
+  fieldset{border:1px solid var(--line);border-radius:16px;padding:20px;margin-bottom:20px}
+  legend{font-weight:700;color:var(--blue-dark);padding:0 8px;font-size:.98rem}
+  .field{margin-bottom:16px}
+  .field:last-child{margin-bottom:0}
+  .hint{color:var(--muted);font-size:.82rem;margin-top:5px}
+
+  .toggle{display:flex;align-items:center;gap:12px;cursor:pointer;user-select:none}
+  .toggle input{position:absolute;opacity:0}
+  .switch{width:50px;height:28px;border-radius:999px;background:#cdd9dd;position:relative;transition:.2s;flex:none}
+  .switch::after{content:"";position:absolute;top:3px;left:3px;width:22px;height:22px;border-radius:50%;
+    background:#fff;box-shadow:0 1px 3px rgba(0,0,0,.3);transition:.2s}
+  .toggle input:checked + .switch{background:var(--green)}
+  .toggle input:checked + .switch::after{transform:translateX(22px)}
+  .toggle .state{font-weight:600;font-size:.92rem}
+
+  .hours-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+  .hours-grid .field{margin-bottom:0}
+  @media(max-width:560px){.hours-grid{grid-template-columns:1fr}}
+
+  .save-row{display:flex;gap:12px;align-items:center;flex-wrap:wrap}
+  .save-row .btn{width:auto;padding:13px 30px}
+  .note{background:var(--teal-soft);border-radius:12px;padding:13px 15px;font-size:.86rem;color:var(--blue-dark);margin-bottom:20px}
+</style>
+</head>
+<body>
+
+<!-- ============ LOGIN ============ -->
+<div class="card login" id="loginCard">
+  <div class="brand"><span class="cross">✚</span> De Shane Chiropractic</div>
+  <h1>Staff Login</h1>
+  <p>Enter the admin password to manage alerts, address, and hours.</p>
+  <form id="loginForm" autocomplete="off">
+    <label for="pw">Password</label>
+    <input type="password" id="pw" placeholder="••••••••" autocomplete="current-password">
+    <div style="height:16px"></div>
+    <button class="btn btn-primary" type="submit">Log in</button>
+    <div class="msg err" id="loginMsg"></div>
+  </form>
+</div>
+
+<!-- ============ PANEL ============ -->
+<div class="card panel" id="panel">
+  <div class="topbar">
+    <h1>Site Controls</h1>
+    <div class="links">
+      <a class="mini" href="index.html" target="_blank">View site ↗</a>
+      <button class="mini" id="logout">Log out</button>
+    </div>
+  </div>
+  <p class="sub">Changes save to your Google Sheet and appear on the live site within a minute.</p>
+
+  <div class="note" id="setupNote" style="display:none">
+    ⚠️ SheetDB isn't connected yet. Add your endpoint to <strong>config.js</strong> (see README) to load and save settings.
+  </div>
+
+  <form id="settingsForm">
+    <fieldset>
+      <legend>🔔 Alert bar</legend>
+      <div class="field">
+        <label class="toggle">
+          <input type="checkbox" id="alertEnabled">
+          <span class="switch"></span>
+          <span class="state" id="alertState">Off</span>
+        </label>
+        <div class="hint">When on, the message below scrolls across the top of every page.</div>
+      </div>
+      <div class="field">
+        <label for="alertText">Alert message</label>
+        <textarea id="alertText" placeholder="e.g. Closed Mon Sept 1 for Labour Day — back Tuesday at 9am!"></textarea>
+      </div>
+    </fieldset>
+
+    <fieldset>
+      <legend>📍 Address</legend>
+      <div class="field">
+        <label for="address">Clinic address (one line)</label>
+        <input type="text" id="address" placeholder="500 Exmouth St, Unit 13, Sarnia, ON">
+        <div class="hint">Updates the hero, map, location section, and footer automatically.</div>
+      </div>
+    </fieldset>
+
+    <fieldset>
+      <legend>🕒 Office hours</legend>
+      <div class="hours-grid">
+        <div class="field"><label for="hours_mon">Monday</label><input type="text" id="hours_mon"></div>
+        <div class="field"><label for="hours_tue">Tuesday</label><input type="text" id="hours_tue"></div>
+        <div class="field"><label for="hours_wed">Wednesday</label><input type="text" id="hours_wed"></div>
+        <div class="field"><label for="hours_thu">Thursday</label><input type="text" id="hours_thu"></div>
+        <div class="field"><label for="hours_fri">Friday</label><input type="text" id="hours_fri"></div>
+        <div class="field"><label for="hours_sat">Saturday</label><input type="text" id="hours_sat"></div>
+        <div class="field"><label for="hours_sun">Sunday</label><input type="text" id="hours_sun"></div>
+      </div>
+      <div class="hint" style="margin-top:12px">Type <strong>Closed</strong> for a closed day. Use any format, e.g. <em>9–1 · 3–6</em>.</div>
+    </fieldset>
+
+    <div class="save-row">
+      <button class="btn btn-primary" type="submit" id="saveBtn">Save changes</button>
+      <div class="msg" id="saveMsg"></div>
+    </div>
+  </form>
+</div>
+
+<script src="config.js"></script>
+<script>
+(function () {
+  var cfg = window.DESHANE_CONFIG || {};
+  var API = cfg.SHEETDB_API || "";
+  var connected = API && API.indexOf("YOUR_ENDPOINT_ID") === -1;
+  var rowExists = false;
+
+  var FIELDS = ["alert_text","address","hours_mon","hours_tue","hours_wed","hours_thu","hours_fri","hours_sat","hours_sun"];
+  var defaults = {
+    alert_enabled:"FALSE", alert_text:"", address:"500 Exmouth St, Unit 13, Sarnia, ON",
+    hours_mon:"9–1 · 3–6", hours_tue:"9 – 1", hours_wed:"Closed",
+    hours_thu:"9–1 · 3–6", hours_fri:"9 – 1", hours_sat:"9 – 12", hours_sun:"Closed"
+  };
+
+  var $ = function (id) { return document.getElementById(id); };
+
+  /* ---------- Login ---------- */
+  // Stay logged in for the browser session only.
+  if (sessionStorage.getItem("adminAuthed") === "1") showPanel();
+
+  $("loginForm").addEventListener("submit", function (e) {
+    e.preventDefault();
+    var msg = $("loginMsg");
+    if (!cfg.ADMIN_PASSWORD || cfg.ADMIN_PASSWORD === "change-this-password") {
+      msg.className = "msg err"; msg.textContent = "Set an admin password in config.js first.";
+      msg.style.display = "block"; return;
+    }
+    if ($("pw").value === cfg.ADMIN_PASSWORD) {
+      sessionStorage.setItem("adminAuthed", "1");
+      showPanel();
+    } else {
+      msg.className = "msg err"; msg.textContent = "Incorrect password.";
+      msg.style.display = "block";
+    }
+  });
+
+  $("logout").addEventListener("click", function () {
+    sessionStorage.removeItem("adminAuthed");
+    location.reload();
+  });
+
+  /* ---------- Alert toggle label ---------- */
+  $("alertEnabled").addEventListener("change", function () {
+    $("alertState").textContent = this.checked ? "On" : "Off";
+  });
+
+  function showPanel() {
+    $("loginCard").style.display = "none";
+    $("panel").classList.add("show");
+    if (!connected) { $("setupNote").style.display = "block"; populate(defaults); return; }
+    loadSettings();
+  }
+
+  function populate(s) {
+    FIELDS.forEach(function (k) { if ($(k)) $(k).value = (s[k] != null ? s[k] : ""); });
+    var on = /^(true|on|yes|1)$/i.test(String(s.alert_enabled).trim());
+    $("alertEnabled").checked = on;
+    $("alertState").textContent = on ? "On" : "Off";
+  }
+
+  function loadSettings() {
+    var msg = $("saveMsg");
+    msg.className = "msg info"; msg.textContent = "Loading current settings…";
+    fetch(API, { cache: "no-store" })
+      .then(function (r) { return r.json(); })
+      .then(function (rows) {
+        if (rows && rows.length) { rowExists = true; populate(rows[0]); }
+        else { rowExists = false; populate(defaults); }
+        msg.style.display = "none";
+      })
+      .catch(function () {
+        msg.className = "msg err"; msg.textContent = "Couldn't reach the sheet. Check your SheetDB URL.";
+        populate(defaults);
+      });
+  }
+
+  /* ---------- Save ---------- */
+  $("settingsForm").addEventListener("submit", function (e) {
+    e.preventDefault();
+    var msg = $("saveMsg"), btn = $("saveBtn");
+    if (!connected) {
+      msg.className = "msg err"; msg.textContent = "Connect SheetDB in config.js before saving."; return;
+    }
+    var data = { id: 1, alert_enabled: $("alertEnabled").checked ? "TRUE" : "FALSE" };
+    FIELDS.forEach(function (k) { data[k] = $(k).value; });
+
+    btn.disabled = true;
+    msg.className = "msg info"; msg.textContent = "Saving…";
+
+    var req = rowExists
+      ? fetch(API + "/id/1", { method: "PATCH", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ data: data }) })
+      : fetch(API, { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ data: data }) });
+
+    req.then(function (r) {
+      if (!r.ok) throw new Error("HTTP " + r.status);
+      return r.json();
+    }).then(function () {
+      rowExists = true;
+      btn.disabled = false;
+      msg.className = "msg ok"; msg.textContent = "✓ Saved. Live site updates within ~1 minute.";
+    }).catch(function () {
+      btn.disabled = false;
+      msg.className = "msg err"; msg.textContent = "Save failed. Check your SheetDB URL and that the sheet has an 'id' column.";
+    });
+  });
+})();
+</script>
+</body>
+</html>
