@@ -12,5 +12,5 @@ window.DESHANE_CONFIG = {
   // 2) Admin password for the /admin.html control panel.
   //    NOTE: this is a *soft* gate — on a static site the password lives in
   //    this file (visible in the public repo). Pick something non-obvious.
-  ADMIN_PASSWORD: "change-this-password"
+  ADMIN_PASSWORD: "ReDa2026"
 };
